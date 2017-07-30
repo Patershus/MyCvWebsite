@@ -9,18 +9,20 @@
     <link href="~/Css/MySheet.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <header id="layoutHeader">
-       <h1>Petter Olgemar</h1>
 
-    </header>
+    <script src="~/Css/MyScript.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+   
 
     
     <div id="wrapper">
-
+        <br />
+        <br />
+        <br />
+        <br />
         @*Navbar, ska flöja med vid skroll och känna vart på sidan man är. *@
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -28,57 +30,49 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Logo</a>
+                    <a class="navbar-brand" href="#wrapper">Petter Olgemar</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a asp-controller="login" asp-action="index" id="loginButton" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+       
+        @*<header id="layoutHeader">
+            <h1>Petter Olgemar</h1>
 
+        </header>*@
 
         <div>
             @RenderBody()
         </div>
 
-        @*Kontakt formulär, ska kopplas till form, mha tag helpers*@
-        <div style="width:40%" id="contact" class="container-fluid bg-grey">
-            <h2 class="text-center">CONTACT</h2>    
-            <div id="row">
-            @*<div class="col-sm-5">*@
-                <p>Har du övriga frågor? Kontakta mig gärna via telefon, mail eller genom att fylla i formuläret.</p>
-                
-                <p><span class="glyphicon glyphicon-phone"></span> 070854124545</p>
-                <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-            @*</div>*@
-                </div>
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                        </div>
-                    </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <button class="btn btn-default pull-right" type="submit">Send</button>
-                        </div>
-                    </div>
-        </div>
+
 
 
     </div>
+
+    <div íd="socialMediaDiv">
+        
+            <a href="https://se.linkedin.com/in/petter-olgemar-9252b791">
+                <img id="socialMedia" src="~/linkedin-logo-1.png" />
+            </a>
+        
+            <a href="https://twitter.com/Droodion">
+                <img id="socialMedia" src="~/Twitter_bird_logo_2012.svg.png" />
+            </a>
+        
+    </div>
+
     @RenderSection("scripts", false)
 
-
+   
 </body>
 </html>

@@ -9,20 +9,27 @@ using MyCvWebsite.Models;
 
 namespace MyCvWebsite.Controllers
 {
-    public class HomeController : Controller
+    public class LoginController : Controller
     {
         // GET: /<controller>/
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
         public IActionResult Index(LoginSpecification loginInput)
         {
-            IndexLoginVM loggedIn = new IndexLoginVM();
-            if (loginInput.Username=="Admin" && loginInput.Password=="123")
+            if (!ModelState.IsValid)
             {
-                loggedIn.IsLoggedIn = true ;
+                return View(loginInput);
             }
-            else
-                 loggedIn.IsLoggedIn = false;
 
-            return View(loggedIn);
+            //Ändra html i navbar?
+
+            return RedirectToAction("Index", "Home",loginInput);
         }
     }
 }

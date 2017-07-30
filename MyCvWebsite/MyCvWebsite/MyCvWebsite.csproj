@@ -6,8 +6,15 @@
 
   <ItemGroup>
     <Content Include="wwwroot\AcademicWork_juni_2017_001.png" />
+    <Content Include="wwwroot\Css\MyScript.js" />
     <Content Include="wwwroot\Css\MySheet.css" />
+    <Content Include="wwwroot\Drivkrafter petter (1).png" />
+    <Content Include="wwwroot\Drivkrafter petter.png" />
     <Content Include="wwwroot\linkedin-logo-1.png" />
+    <Content Include="wwwroot\Lärande.png" />
+    <Content Include="wwwroot\Professionalism.png" />
+    <Content Include="wwwroot\Service.png" />
+    <Content Include="wwwroot\Twitter_bird_logo_2012.svg.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

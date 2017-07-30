@@ -1,21 +1,61 @@
-﻿
+﻿@model IndexLoginVM
 
-<br />
-<br />
-<br />
-<br />
-<div>
-    <img id="portrait" src="~/AcademicWork_juni_2017_001.png" />
+
+<div id="about">
+    <div  class="row"> 
+       <h1 id="drivkrafterRow" >Drivkrafter</h1> 
+        
+    </div>
+    <div class="row">
+        <img id="portrait" src="~/AcademicWork_juni_2017_001.png" />
+
+        <img id="serviceBild" src="~/Service.png" />
+        <img id="profBild" src="~/Professionalism.png" />
+        <img id="learningBild" src="~/Lärande.png" />
+    </div>
 </div>
-<h1>Kompetenser</h1>
-
-<h1>Uppdrag</h1>
-<h1>Utbildning</h1>
-<h1>Certifiering?</h1>
 
 
+<div id="projects">
+    <h1 id="kompetenserHeader">Kompetenser</h1>
+
+    <h1>Uppdrag</h1>
+    <h1>Utbildning</h1>
+    <h1>Certifiering?</h1>
+</div>
+
+@*@if (@Model.IsLoggedIn == true)
+{
+   IsLoggedIn();
+}*@
 
 
+@*Kontakt formulär, ska kopplas till form, mha tag helpers*@
+<div style="width:40%" id="contact" class="container-fluid bg-grey">
+    <h2 class="text-center">CONTACT</h2>
+    <div id="row">
+        @*<div class="col-sm-5">*@
+        <p>Har du övriga frågor? Kontakta mig gärna via telefon, mail eller genom att fylla i formuläret.</p>
+
+        <p><span class="glyphicon glyphicon-phone"></span> 070854124545</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+        @*</div>*@
+    </div>
+    <div class="row">
+        <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+    </div>
+    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+    <div class="row">
+        <div class="col-sm-12 form-group">
+            <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+    </div>
+</div>
 
 @section scripts
 {
