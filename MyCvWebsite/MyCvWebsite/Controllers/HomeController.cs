@@ -12,6 +12,7 @@ namespace MyCvWebsite.Controllers
     public class HomeController : Controller
     {
         // GET: /<controller>/
+        [HttpGet]
         public IActionResult Index(LoginSpecification loginInput)
         {
             IndexLoginVM loggedIn = new IndexLoginVM();
@@ -23,6 +24,14 @@ namespace MyCvWebsite.Controllers
                  loggedIn.IsLoggedIn = false;
 
             return View(loggedIn);
+        }
+
+        [HttpPost]
+        public IActionResult Index(ContactFormMessage message)
+        {
+
+
+            return RedirectToAction(nameof(View));
         }
     }
 }

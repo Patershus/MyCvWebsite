@@ -27,6 +27,7 @@ namespace MyCvWebsite.Controllers
                 return View(loginInput);
             }
 
+            IndexLoginVM loggedIn = new IndexLoginVM { IsLoggedIn = true };
             //Ändra html i navbar?
 
             return RedirectToAction("Index", "Home",loginInput);
